@@ -1,4 +1,4 @@
-name: Compile 4D Project
+name: Build 4D Project
 
 on:
   workflow_dispatch:           # Still allow manual trigger anytime
