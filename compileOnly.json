@@ -1,0 +1,4 @@
+[
+  { "command": "compileProject" },
+  { "command": "quit", "parameters": ["0"] }
+]
