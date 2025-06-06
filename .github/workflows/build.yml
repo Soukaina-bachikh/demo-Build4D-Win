@@ -17,7 +17,7 @@ jobs:
       - name: Compile with Tool4D
         shell: cmd
         run: |
-          %TOOL4D_PATH% --project %GITHUB_WORKSPACE%\Project\demo-Build4D-Win.4DProject --dataless --skip-onstartup --startup-method "buildMethod"
+          %TOOL4D_PATH% --project "%GITHUB_WORKSPACE%\Project\demo-Build4D-Win.4DProject" --dataless --skip-onstartup --startup-method "buildMethod"
     
       - name: Success message
         if: success()
