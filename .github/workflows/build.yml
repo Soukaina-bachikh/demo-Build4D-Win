@@ -9,7 +9,7 @@ jobs:
 
     env:
       TOOL4D_PATH: C:\Users\Admin\Downloads\tool4d_win\tool4d\Tool4D.exe
-      PROJECT_PATH: %GITHUB_WORKSPACE%\Project\demo-Build4D-Win.4DProject
+      PROJECT_PATH: C:\Users\Admin\Desktop\demo-Build4D-Win\Project\demo-Build4D-Win.4DProject
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
