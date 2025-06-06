@@ -3,7 +3,7 @@ name: Compile 4D Project
 on:
   push:
     paths:
-      - 'project/**'           # Only run if something in the project folder changes
+      - 'Project/**'           # Only run if something in the project folder changes
   workflow_dispatch:           # Still allow manual trigger anytime
 
 jobs:
