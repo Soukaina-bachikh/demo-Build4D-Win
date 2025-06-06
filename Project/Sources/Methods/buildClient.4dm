@@ -3,7 +3,7 @@
 
 var $build : cs:C1710.Build4D.Client
 var $settings; $archive : Object
-//var $success : Boolean
+var $success : Boolean
 
 $settings:={}
 

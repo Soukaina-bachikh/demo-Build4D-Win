@@ -2,7 +2,7 @@
 #DECLARE()->$result : Object
 var $build : cs:C1710.Build4D.Server
 var $settings : Object
-//var $success : Boolean
+var $success : Boolean
 //var $archivePath : 
 
 $settings:={}
