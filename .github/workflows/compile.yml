@@ -24,8 +24,12 @@ jobs:
 
       - name: List project folder contents
         shell: cmd
-        run: dir "%GITHUB_WORKSPACE%\Project"
+        run: dir "%GITHUB_WORKSPACE%\"
 
+      - name: Show compilation logs
+        shell: cmd
+        run: type "%GITHUB_WORKSPACE%\compileLogs.txt"
+  
       - name: Success message
         if: success()
         run: echo "✅ Compilation succeeded!"
