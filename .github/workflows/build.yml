@@ -1,4 +1,4 @@
-name: Compile 4D Project
+name: Build 4D Project
 
 on:
   workflow_dispatch:           # Still allow manual trigger anytime
@@ -8,16 +8,16 @@ jobs:
     runs-on: [self-hosted, Windows, X64]
 
     env:
-      TOOL4D_PATH: C:\Users\Admin\Downloads\tool4d_win\tool4d\Tool4D.exe
+      TOOL4D_PATH: C/Users/Admin/Downloads/tool4d_win/tool4d/Tool4D.exe
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Compile with Tool4D
+      - name: Build with Tool4D
         shell: cmd
         run: |
-          %TOOL4D_PATH% --project %GITHUB_WORKSPACE%\Project\demo-Build4D-Win.4DProject --dataless --skip-onstartup --startup-method "buildMethod"
+          %TOOL4D_PATH% --project "%GITHUB_WORKSPACE%/Project/demo-Build4D-Win.4DProject" --dataless --skip-onstartup --startup-method "%GITHUB_WORKSPACE%/Project/Sources/Methods/buildMethod"
     
       - name: Success message
         if: success()
