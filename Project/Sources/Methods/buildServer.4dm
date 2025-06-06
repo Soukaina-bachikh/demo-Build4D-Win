@@ -33,7 +33,7 @@ $settings.versioning.companyName:="4D SAS"
 
 // Add the client archive
 If ($settings.destinationFolder.parent.folder("Client/").exists)
-	$settings.windowsClientArchive:=$settings.destinationFolder.parent.folder("Client/").file("update.win.4darchive")
+	$settings.windowsClientArchive:=$settings.destinationFolder.parent.folder("Client").file("update.win.4darchive")
 End if 
 If ($settings.windowsClientArchive#Null:C1517)
 	LOG EVENT:C667(Into system standard outputs:K38:9; "🖥️ inside server code 4: "+$settings.windowsClientArchive.path+"\r\n")
