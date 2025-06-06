@@ -32,10 +32,12 @@ $settings.versioning.copyright:="copyright"
 $settings.versioning.companyName:="4D SAS"
 
 // Add the client archive
-If ($settings.destinationFolder.parent.folder("Client/")#Null:C1517)
+If ($settings.destinationFolder.parent.folder("Client/").exists)
 	$settings.windowsClientArchive:=$settings.destinationFolder.parent.folder("/Client").file("update.win.4darchive")
 End if 
-LOG EVENT:C667(Into system standard outputs:K38:9; "🖥️ inside server code 4: "+$settings.windowsClientArchive.path+"\r\n")
+If ($settings.windowsClientArchive#Null:C1517)
+	LOG EVENT:C667(Into system standard outputs:K38:9; "🖥️ inside server code 4: "+$settings.windowsClientArchive.path+"\r\n")
+End if 
 LOG EVENT:C667(Into system standard outputs:K38:9; "🖥️ inside server code 5: "+JSON Stringify:C1217($settings)+"\r\n")
 
 // Launch the build
