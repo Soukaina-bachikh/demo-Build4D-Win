@@ -1,5 +1,5 @@
 //%attributes = {}
-#DECLARE()->$success : Object
+#DECLARE()->$success : Boolean
 var $build : cs:C1710.Build4D.Server
 var $settings : Object
 //var $success : Boolean

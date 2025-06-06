@@ -1,5 +1,5 @@
 //%attributes = {}
-#DECLARE()->$success : Object
+#DECLARE()->$success : Boolean
 
 var $build : cs:C1710.Build4D.Client
 var $settings; $archive : Object
@@ -34,4 +34,4 @@ $success:=$build.build()
 // Create the client application archive
 $archive:=$build.buildArchive()
 
-$logs:=$build.logs
+//$logs:=$build.logs

@@ -1,42 +1,32 @@
 //%attributes = {}
 var $userParam : Text
 var $number : Real
-
+var $status : Object
+var $logText : Text
+var $logFile : Object
 $number:=Get database parameter:C643(User param value:K37:94; $userParam)
 
 // For compilation check
-If ($param="compile")
-	var $status : Object
+If ($userParam="compile")
 	$status:=Compile project:C1760()
 	
-	$logText:=JSON Stringify:C1217($status; json pretty)
+	$logText:=JSON Stringify:C1217($status)
 	
 	// Write log to file on desktop
 	$logFile:=Folder:C1567(fk desktop folder:K87:19).file("demo-Build4D-Win/compileLogs.txt")
 	$logFile.setText($logText)
 	
-	If ($status.success)
-		QUIT 0
-	Else 
-		// Log errors if needed
-		//$status.logs
-		QUIT 1
-	End if 
 End if 
 
 // For full build
-If ($param="build")
+If ($userParam="build")
 	// Call your buildClient and buildServer methods here
 	var $logsClient : Collection
 	var $logsServer : Collection
-	var $successClient; $successServer : Object
+	var $successClient; $successServer : Boolean
 	
 	$successClient:=buildClient()
 	$successServer:=buildServer()
 	
-	If ($successClient.success & $successServer.success)
-		QUIT 0
-	Else 
-		QUIT 1
-	End if 
 End if 
+QUIT 4D:C291
