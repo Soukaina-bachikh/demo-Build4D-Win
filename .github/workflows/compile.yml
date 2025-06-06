@@ -20,8 +20,7 @@ jobs:
       - name: Compile with Tool4D
         shell: cmd
         run: |
-          "%TOOL4D_PATH%" "%GITHUB_WORKSPACE%\Project\demo-Build4D-Win.4DProject" --user-param "compile" --dataless --headless
-
+          %TOOL4D_PATH% --project=%GITHUB_WORKSPACE%\Project\demo-Build4D-Win.4DProject --dataless --log-level=2 --user-param "compile"  
       - name: List project folder contents
         shell: cmd
         run: dir "%GITHUB_WORKSPACE%\"
