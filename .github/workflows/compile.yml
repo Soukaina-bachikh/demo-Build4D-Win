@@ -18,10 +18,10 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Compile with Tool4D
-        run: >
-          "${{ env.TOOL4D_PATH }}"
-          "${{ github.workspace }}\Project\demo-Build4D-Win.4DProject"
-          --user-param "${{ github.workspace }}\compileOnly.json"
+        shell: cmd
+        run: |
+        "%TOOL4D_PATH%" "%GITHUB_WORKSPACE%\Project\demo-Build4D-Win.4DProject" --user-param "%GITHUB_WORKSPACE%\compileOnly.json"
+
 
       - name: Success message
         if: success()
