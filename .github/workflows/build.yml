@@ -17,12 +17,12 @@ jobs:
       - name: Build with Tool4D
         shell: cmd
         run: |
-          %TOOL4D_PATH% --project "%GITHUB_WORKSPACE%\Project\demo-Build4D-Win.4DProject" --dataless --skip-onstartup --startup-method "%GITHUB_WORKSPACE%\Project\Sources\Methods\buildMethod"
+           call %TOOL4D_PATH% --project "%GITHUB_WORKSPACE%\Project\demo-Build4D-Win.4DProject" --dataless --skip-onstartup --startup-method "%GITHUB_WORKSPACE%\Project\Sources\Methods\buildMethod"
     
       - name: Success message
         if: success()
-        run: echo "✅ Compilation succeeded!"
+        run: echo "✅ Build succeeded!"
 
       - name: Failure message
         if: failure()
-        run: echo "❌ Compilation failed!"
+        run: echo "❌ Build failed!"
