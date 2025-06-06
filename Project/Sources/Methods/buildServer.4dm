@@ -12,7 +12,7 @@ $settings.startElevated:=True:C214
 $settings.projectFile:=Folder:C1567(fk desktop folder:K87:19).file("demo-Build4D-Win/Project/demo-Build4D-Win.4DProject")
 
 // Define the 4D Server path
-$settings.sourceAppFolder:=Folder:C1567(Application file:C491; fk platform path:K87:2).parent.parent.folder("4D Server")
+$settings.sourceAppFolder:=Folder:C1567(fk documents folder:K87:21).folder("4D 20 R8 100333/4D Server")
 
 // Configure the application
 $settings.buildName:="serverApp"
