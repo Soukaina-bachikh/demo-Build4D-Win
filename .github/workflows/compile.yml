@@ -20,15 +20,20 @@ jobs:
       - name: Compile with Tool4D
         shell: cmd
         run: |
-          %TOOL4D_PATH% --project=%GITHUB_WORKSPACE%\Project\demo-Build4D-Win.4DProject --dataless --log-level=2 --user-param "compile"  
+          %TOOL4D_PATH% --project=%GITHUB_WORKSPACE%\Project\demo-Build4D-Win.4DProject --dataless --log-level=2 --user-param "compile"  > compileLogs.txt 2>&1
       - name: List project folder contents
         shell: cmd
         run: dir "%GITHUB_WORKSPACE%\"
-
       - name: Show compilation logs
         shell: cmd
-        run: type "%GITHUB_WORKSPACE%\compileLogs.txt"
-  
+        run: type compileLogs.txt
+      
+      - name: Upload compilation logs
+        uses: actions/upload-artifact@v4
+        with:
+          name: compile-logs
+          path: compileLogs.txt
+          
       - name: Success message
         if: success()
         run: echo "✅ Compilation succeeded!"
