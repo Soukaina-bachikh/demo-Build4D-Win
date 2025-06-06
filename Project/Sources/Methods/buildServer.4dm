@@ -5,6 +5,7 @@ var $settings : Object
 var $success : Boolean
 //var $archivePath : 
 
+
 $settings:={}
 $settings.startElevated:=True:C214
 
@@ -31,6 +32,8 @@ $settings.versioning.companyName:="4D SAS"
 If ($settings.destinationFolder.parent.folder("Client/")#Null:C1517)
 	$settings.windowsClientArchive:=$settings.destinationFolder.parent.folder("/Client").file("update.win.4darchive")
 End if 
+LOG EVENT:C667(Into system standard outputs:K38:9; "🖥️ inside server: "+JSON Stringify:C1217($settings)+"\r\n")
+
 
 // Launch the build
 $build:=cs:C1710.Build4D.Server.new($settings)
