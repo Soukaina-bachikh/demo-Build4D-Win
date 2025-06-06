@@ -9,7 +9,7 @@ jobs:
 
     env:
       TOOL4D_PATH: C:\Users\Admin\Downloads\tool4d_win\tool4d\Tool4D.exe
-      PROJECT_PATH: C:\Users\Admin\Desktop\demo-Build4D-Win\Project\demo-Build4D-Win.4DProject
+  
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -17,7 +17,7 @@ jobs:
       - name: Build with Tool4D
         shell: cmd
         run: |
-          %TOOL4D_PATH% --project "PROJECT_PATH" --dataless --skip-onstartup --startup-method "buildMethod"
+          %TOOL4D_PATH% --project "C:\Users\Admin\Desktop\demo-Build4D-Win\Project\demo-Build4D-Win.4DProject" --dataless --skip-onstartup --startup-method "buildMethod"
     
       - name: Success message
         if: success()
