@@ -7,7 +7,7 @@ on:
   workflow_dispatch:           # Still allow manual trigger anytime
 
 jobs:
-  compile:
+  build:
     runs-on: [self-hosted, Windows, X64]
 
     env:
@@ -20,8 +20,8 @@ jobs:
       - name: Compile with Tool4D
         shell: cmd
         run: |
-          %TOOL4D_PATH% --project=%GITHUB_WORKSPACE%\Project\demo-Build4D-Win.4DProject --dataless --user-param %GITHUB_WORKSPACE%\Project\demo-Build4D-Win.4DProject --skip-onstartup --startup-method "compileMethod"
-     
+          %TOOL4D_PATH% --project %GITHUB_WORKSPACE%\Project\demo-Build4D-Win.4DProject --dataless --skip-onstartup --startup-method "buildMethod"
+    
       - name: Success message
         if: success()
         run: echo "✅ Compilation succeeded!"
