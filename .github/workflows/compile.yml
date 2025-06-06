@@ -22,9 +22,9 @@ jobs:
         run: |
           "%TOOL4D_PATH%" "%GITHUB_WORKSPACE%\Project\demo-Build4D-Win.4DProject" --user-param "compile" --dataless --headless
 
-      - name: Show compilation logs
+      - name: List project folder contents
         shell: cmd
-        run: type compileLogs.txt
+        run: dir "%GITHUB_WORKSPACE%\Project"
 
       - name: Success message
         if: success()
