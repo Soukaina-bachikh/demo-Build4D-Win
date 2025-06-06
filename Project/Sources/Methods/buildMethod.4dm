@@ -8,9 +8,11 @@ LOG EVENT:C667(Into system standard outputs:K38:9; "📦 Running buildClient...\
 $successClient:=buildClient()
 LOG EVENT:C667(Into system standard outputs:K38:9; "📦 buildClient result: "+String:C10($successClient)+"\r\n")
 
-LOG EVENT:C667(Into system standard outputs:K38:9; "🖥️ Running buildServer...\r\n")
-$successServer:=buildServer()
-LOG EVENT:C667(Into system standard outputs:K38:9; "🖥️ buildServer result: "+String:C10($successServer)+"\r\n")
+If ($successClient)
+	LOG EVENT:C667(Into system standard outputs:K38:9; "🖥️ Running buildServer...\r\n")
+	$successServer:=buildServer()
+	LOG EVENT:C667(Into system standard outputs:K38:9; "🖥️ buildServer result: "+String:C10($successServer)+"\r\n")
+End if 
 
 If ($successClient & $successServer)
 	LOG EVENT:C667(Into system standard outputs:K38:9; "✅ All builds succeeded!\r\n")
