@@ -1,0 +1,32 @@
+name: Compile 4D Project
+
+on:
+  push:
+    paths:
+      - 'project/**'           # Only run if something in the project folder changes
+  workflow_dispatch:           # Still allow manual trigger anytime
+
+jobs:
+  compile:
+    runs-on: self-hosted
+
+    env:
+      TOOL4D_PATH: C:\Users\Admin\Downloads\tool4d_win\tool4d\Tool4D.exe
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Compile with Tool4D
+        run: >
+          "${{ env.TOOL4D_PATH }}"
+          "${{ github.workspace }}\Project\demo-Build4D-Win.4DProject"
+          --user-param "${{ github.workspace }}\compileOnly.json"
+
+      - name: Success message
+        if: success()
+        run: echo "✅ Compilation succeeded!"
+
+      - name: Failure message
+        if: failure()
+        run: echo "❌ Compilation failed!"
