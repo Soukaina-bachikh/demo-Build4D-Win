@@ -8,7 +8,7 @@ on:
 
 jobs:
   compile:
-    runs-on: self-hosted
+    runs-on: [self-hosted, Windows, X64]
 
     env:
       TOOL4D_PATH: C:\Users\Admin\Downloads\tool4d_win\tool4d\Tool4D.exe
