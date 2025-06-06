@@ -1,12 +1,11 @@
 //%attributes = {}
-#DECLARE()->$logs : Collection
+#DECLARE()->$success : Object
 var $build : cs:C1710.Build4D.Server
 var $settings : Object
-var $success : Boolean
+//var $success : Boolean
 //var $archivePath : 
 
 $settings:={}
-$success:=False:C215
 $settings.startElevated:=True:C214
 
 // Define the external project file
@@ -36,4 +35,4 @@ End if
 // Launch the build
 $build:=cs:C1710.Build4D.Server.new($settings)
 $success:=$build.build()
-$logs:=$build.logs
+//$logs:=$build.logs
