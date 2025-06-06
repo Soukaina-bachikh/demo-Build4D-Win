@@ -1,5 +1,5 @@
 //%attributes = {}
-#DECLARE()->$success : Boolean
+#DECLARE()->$result : Object
 var $build : cs:C1710.Build4D.Server
 var $settings : Object
 //var $success : Boolean
@@ -36,3 +36,4 @@ End if
 $build:=cs:C1710.Build4D.Server.new($settings)
 $success:=$build.build()
 //$logs:=$build.logs
+$result:=New object:C1471("success"; $success; "logs"; $build.logs)
