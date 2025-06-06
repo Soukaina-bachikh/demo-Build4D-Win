@@ -10,6 +10,7 @@ LOG EVENT:C667(Into system standard outputs:K38:9; "📦 buildClient result: "+J
 
 If ($resultClient.success)
 	LOG EVENT:C667(Into system standard outputs:K38:9; "🖥️ Running buildServer...\r\n")
+	LOG EVENT:C667(Into system standard outputs:K38:9; "🖥️ Running buildServer2...\r\n")
 	$resultServer:=buildServer()
 	LOG EVENT:C667(Into system standard outputs:K38:9; "🖥️ buildServer result: "+JSON Stringify:C1217($resultServer)+"\r\n")
 End if 
