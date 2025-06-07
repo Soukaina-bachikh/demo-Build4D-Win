@@ -18,6 +18,9 @@ $settings.sourceAppFolder:=Folder:C1567(fk documents folder:K87:21).folder("4D 2
 $settings.buildName:="clientApp"
 $settings.destinationFolder:=Folder:C1567(fk desktop folder:K87:19).folder("buildApp/Client")
 
+//add ipAddress
+$settings.IPAddress:="localhost"
+
 // Add the application icon
 //$settings.iconPath:="/RESOURCES/myIcon.ico"
 
