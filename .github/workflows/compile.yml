@@ -23,7 +23,7 @@ jobs:
           %TOOL4D_PATH% --project "C:\Users\Admin\Desktop\demo-Build4D-Win\Project\demo-Build4D-Win.4DProject"  --dataless --user-param "C:/Users/Admin/Desktop/demo-Build4D-Win/Project/demo-Build4D-Win.4DProject" --skip-onstartup --startup-method "compileMethod"  > compile_output.txt
      
       - name: Check compilation result
-        shell: pwsh
+        shell: powershell
         run: |
           $content = Get-Content compile_output.txt -Raw
           Write-Output "📄 Tool4D Output:"
@@ -35,4 +35,5 @@ jobs:
           } else {
               Write-Output "✅ Compilation succeeded with no errors!"
           }
+
   
