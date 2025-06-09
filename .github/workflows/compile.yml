@@ -29,7 +29,7 @@ jobs:
           Write-Output "📄 Tool4D Output:"
           Write-Output $content
       
-          if (if ($content -match '"success"\s*:\s*false' -or $content -match '"errors"\s*:\s*\[[^\]]+') {
+          if (if ($content -match '"success"\s*:\s*false' -or $content -match '"errors"\s*:\s*\[[^\]]+')) {
               Write-Output "❌ Compilation completed with errors!"
               exit 1
           } else {
