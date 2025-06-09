@@ -20,7 +20,7 @@ jobs:
       - name: Compile with Tool4D
         shell: cmd
         run: |
-          %TOOL4D_PATH% --project "C:\Users\Admin\Desktop\demo-Build4D-Win\Project\demo-Build4D-Win.4DProject"  --dataless --user-param "C:/Users/Admin/Desktop/demo-Build4D-Win/Project/demo-Build4D-Win.4DProject" --skip-onstartup --startup-method "compileMethod"  > compile_output.txt
+          %TOOL4D_PATH% --project "C:\Users\Admin\Desktop\demo-Build4D-Win\Project\demo-Build4D-Win.4DProject"  --dataless --log-level=0 --user-param "C:/Users/Admin/Desktop/demo-Build4D-Win/Project/demo-Build4D-Win.4DProject" --skip-onstartup --startup-method "compileMethod"  > compile_output.txt
      
       - name: Check compilation result
         shell: powershell
@@ -35,5 +35,3 @@ jobs:
           } else {
               Write-Output "✅ Compilation succeeded with no errors!"
           }
-
-  
