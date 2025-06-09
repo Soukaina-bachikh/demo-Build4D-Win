@@ -12,7 +12,6 @@ If ($projectPath#"")
 	LOG EVENT:C667(Into system standard outputs:K38:9; "Code 2: "+$projectPath)
 	$compilationReturn:=Compile project:C1760(File:C1566($projectPath))
 	LOG EVENT:C667(Into system standard outputs:K38:9; "Code 3: "+$projectPath)
-	LOG EVENT:C667(Into system standard outputs:K38:9; "Compilation retu"rns : \r\n"+JSON Stringify($compilationReturn; *))"
+	LOG EVENT:C667(Into system standard outputs:K38:9; "Compilation returns : \r\n"+JSON Stringify:C1217($compilationReturn; *))
 End if 
 
-WP Paragraph range:C1346
