@@ -11,7 +11,7 @@ env:
 
 jobs:
   checkout:
-    name: 🔄 Checkout Repository
+    name: Checkout Repository
     runs-on: self-hosted
 
     steps:
@@ -19,7 +19,7 @@ jobs:
         uses: actions/checkout@v4
 
   compile:
-    name: ⚙️ Compile Project with Tool4D
+    name: Compile Project with Tool4D
     runs-on: self-hosted
     needs: checkout
 
@@ -36,7 +36,7 @@ jobs:
           path: compile_output.txt
 
   analyze:
-    name: 🧪 Analyze Compilation Result
+    name: Analyze Compilation Result
     runs-on: self-hosted
     needs: compile
 
